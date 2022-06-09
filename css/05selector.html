@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <title>온라인 프로필</title>
+  <meta charset="utf-8">
+  <style>
+    /* *은 all 전체의 외부 영역 스타일을 margin 0으로 모두 지워버리겠습니다.*/
+    /* 전체 선택자 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 아이디 선택자 div로 하면 여러개라서 안되고 id 어트리뷰트-값을 선택*/
+    /* display : (inline-) block 일 경우 */
+    /* * {
+      width: 600px;
+      padding: 15;
+      border: 3px solid gray; 
+    }  */
+
+    #container {
+      width: 600px;
+      padding: 15;
+      border: 3px dotted gray;
+    }
+
+    .browntext {
+      color: brown;
+    }
+
+    .boldtext {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <h1>회사 소개</h1>
+
+    <h2 class="accent">“사람을 구체적으로 도와주는 책”</h2>
+    <p>이지스퍼블리싱(주)의 책에는 <span class="browntext boldtext">‘사람들에게 구체적으로 도움이 되는 책’을 만든다는 출판 가치가 담겨 있습니다.</span></p>
+    <p> 2010년 5월 출범한 이지스퍼블리싱(주)는 크게 두 영역의 책을 출간합니다. IT 실용 도서와 학습 분야 도서입니다.
+      IT 교재와 사진 책 등 실용서는 이지스퍼블리싱 브랜드로, 학습과 자녀교육 도서는 이지스에듀 브랜드로 출간하고 있습니다. </p>
+    <style>
+      .bluetext {
+        color: rebeccapurple;
+      }
+
+      h2.accent {
+        background-color: #222;
+        color: #fff;
+        padding: 5px;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      underline {
+        text-decoration: underline;
+      }
+
+      body {
+        color: blue;
+      }
+
+      h2 {
+        color: yellowgreen !important;
+      }
+    </style>
+    <h2 style="color:yellowgreen"> 이지스퍼블리싱의 미션</h2>
+    <p>사람에게 구체적으로 <span class="bluetext">도움</span>을 주는 책<br>
+      우리는 열심히 사는 사람들에게 도움이 되고 싶습니다.<br>
+      우리는 책을 출간하기 전에 질문할 것입니다.<br>
+      <p style="color:red; font-style: italic;""> 책 이 사람들에게 도움이 됩니까?" </p> <p class="bluetext">정보의 지름길을 만들어 빠르게 원하는 곳으로
+        가도록 도와주는 책.
+        손에 잡히는 이익을 얻을 수 있도록 도움이 되는 책을 만들고 싶습니다.</p>
+  </div>
+
+  <div>
+    내용...
+  </div>
+</body>
+
+</html>
