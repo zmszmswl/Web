@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>박스모델</title>
+	<style>
+			.box1{
+			width: 200px;
+			height: 200px;
+			border: 3px solid red;
+			/* border-top-left-radius: 30px;
+			border-top-right-radius:25px;
+			border-bottom-left-radius:35px;
+			border-bottom-right-radius:40px; */
+			border-radius: 50% 50% 50% 50%;
+			box-shadow: 20px 25px 5px 0px grey;
+		}
+	div{
+		width:200px;
+		height: 100px;
+		display: inline-block;
+		margin: 15px;
+		border-width: 5px;
+	}
+	.box1 {
+		border-style: solid;	
+	}
+	.box2{
+		border-style: dotted;
+	}
+	.box3{
+		border-style: dashed;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="box1"> </div>
+	<div class="box2"> </div>
+	<div class="box3"> </div>
+</body>
+
+</html>

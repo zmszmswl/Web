@@ -1,0 +1,87 @@
+body{
+	font-family:"맑은 고딕", "고딕", "굴림";
+}
+header {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #069;
+	padding: 10px;
+	overflow: hidden;
+}
+header h1{
+	width:40%;
+	float:left;	
+	color:#fff;
+}
+
+header nav {
+	width:60%;
+	float:right;	
+}
+
+nav ul{
+	list-style-type:none;	
+	border: 2px solid green;
+	/* position: relative; */
+}
+
+nav ul li{
+	display: inline;
+	float: left;
+	margin: 15px;
+	border: 1px solid red;
+	position: relative; /*기본값 static*/ /*absolute는 li(리스트)를 포함하는= 가지고있는 부모 테이블을 기준으로 20픽셀씩 움직이겠다*/  /*relative 자연스럽게 뭉쳐서 연결해서 배치*/ /*지정한 위치에 고정해서 배치. 화면에서 요소가 잘릴 수도 있음*/
+	top:20px;
+	left:20px;
+}
+
+
+nav ul li a{
+	color:white;
+	text-decoration:none;	
+}
+p {
+	font-size:15px;
+	line-height:20px;
+}
+dt {
+	font-weight:bold;
+	color:purple;
+}
+
+h1{
+	font-size:2em;	
+}
+
+section{
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	border:5px solid #333;
+	padding:5px;
+	overflow:hidden;
+	border: 2px solid red;
+}
+article h3{
+	background-image:url(images/bg.png);
+	background-repeat:no-repeat;
+	background-position:left center;
+	padding-left:30px;
+}
+aside{
+	clear:both;
+	height:auto;
+	padding:10px;
+}
+footer{
+	clear:both;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;	
+	margin-top:0;
+	padding:10px;
+	background-color:#333;
+	color:white;	
+	text-align:center;
+}

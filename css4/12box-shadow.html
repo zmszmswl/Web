@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>박스모델</title>
+	<style>
+		div{
+			width: 200px;
+			height: 100px;
+			display: inline-block;
+			margin: 15px;
+			border:2px solid;
+			border-radius: 20px;
+			/* background-color: palevioletred; */
+		}
+		.box1{
+			box-shadow: 2px -2px 5px 0px black;
+			background-color: palevioletred;
+		}
+		.box2{
+			box-shadow: 5px 5px 15px 5px gray;
+			background-color: gold;
+		}
+		div1{
+			width: 500px;
+			height: 500px;
+			display: inline-block;
+			background: yellowgreen;
+			background : radial-gradient (circle, white,yellow,rebeccapurple);
+			border: 3px dotted red;
+			box-shadow: 10px 10px 15px 5px red;
+			border-radius: 50%;	
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div1 class="circle1"></div>
+</body>
+
+</html>
