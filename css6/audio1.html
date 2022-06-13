@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오디오 재생하기</title>
+    <style>
+
+        .top{
+            width: 600px;
+            height: 300px;
+            background: url(images/bg2.jpg) no-repeat top left;
+            background-size: auto;
+        }
+    </style>
+</head>
+<body>
+    <audio src="media/bgsound.mp3" autoplay controls loop> </audio>
+    <video src="media/Painting.mp4" controls preload="metadata"></video>
+    <video src="media/Painting.mp4" ></video>
+    <video src="media/Painting.mp4"controls  muted></video>
+    <video src="media/Painting.mp4" controls loop ></video>
+    <video src="media/Painting.mp4" controls poster="포스터이미지" ></video>
+    <video controls>
+        <source src="Painting.mp4" type="video/mp4">
+        <source src="Painting.webm"video/webm.webm">
+        이 영상을 보기 위해서는 HTML5를 지원하는 브로우저가 필요합니다.
+        <source src="Painting.ogv" type="video/ogg.ogv">
+        <object data="media/Painting.swf" type="application/x-shockwave-flash"></object>
+
+    </video>
+    <div class="top"></div>
+</body>
+</html>
