@@ -35,7 +35,7 @@ console.log('배열의 합 : ' + result);
 document.write('배열의 합 : ' + result);
 
 
-//메소드의 매개값으로 함수 : 콜백함수.
+//메소드의 매개값으로 함수 : 콜백함수. 반복문임!
 result=0;
 numAry.forEach(function (val, idx, ary) { 
     if(val%2 == 1){
