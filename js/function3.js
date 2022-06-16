@@ -158,7 +158,7 @@ let multiply = (a, b, ...args) =>{
     let result = a * b;
     for (let i = 0; i < args.length; i++){
         result *= args[i];
-    }
+    } //수정
     return result;
 }
 console.log(multiply(1,2,3,4));
