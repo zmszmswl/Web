@@ -118,5 +118,36 @@ for(num of ary){
     console.log(num.age);
 }
 console.log(num);
+// p.84 함수 안의 로컬 변수
+var name = '어피치';
+function run(){
+    if(true){
+        var name = '라이언';
+        var name = '프로도';
+    }
+    console.log(name); // 마지막으로 선언된 프로도 출력 (로컬변수 name)
+}
+run();
+console.log(name); // 어피치 출력(전역변수 name)
+
+// p.85 함수 스코프 체인
+var a = 1;
+var b = 5;
+function outerFunc () {
+    let b;
+    function innerFunc () {
+        a = b;
+    }
+    console.log(a);
+    a = 3;
+    b = 4;
+    innerFunc();
+    console.log(a);
+    // innerFunc();
+    // console.log(a);
+}
+outerFunc();
+
+
 
 
