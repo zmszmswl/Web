@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom.html</title>
+</head>
+
+<body>
+    <!-- div#class -->
+    <div id="show">
+        <!-- <ul>
+            <li>이희수</li>
+            <li>권소정</li>
+            <li>김하은</li>
+        </ul> -->
+        <!-- 
+        <table>
+            <tbody>
+            <tr>
+                <td>1.</td>
+                <td>이희수</td>
+            </tr>
+            <tr>    
+                <td>2.</td>
+                <td>권소정</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>김하은</td>
+            </tr>
+        </tbody>
+        </table> -->
+    </div>
+    <!-- <div class="show"></div> -->
+
+ 
+    <script> 
+        // createElement(), createTextNode(), appendChild(자식요소) 이용해서 만들기.
+        let students = [{
+            sno: 1,
+            sname: "이희수"
+        }, {
+            sno: 2,
+            sname: "권소정"
+        }, {
+            sno: 3,
+            sname: "김하은"
+
+        }];
+        // Document Object Model => object:속성, 기능.  디오엠 영역에 있는 요소들을 오브젝트타입으로 // 모델 활용하여 페이지 만들기
+        document.getElementById('show'); // <!-- <div class="show"></div> -->
+
+        // 요소생성. createElement()
+        let ul = document.createElement('ul');
+        students.forEach(elem => {
+            let li = document.createElement('li');
+            li.setAttribute('id', elem.sno); // attributeNode를 추가하는 메소드:setAttribute()
+            let txt = document.createTextNode(`${elem.sno}, ${elem.sname}`); // 만드는게 텍스트노드일경우createTextNode
+            li.appendChild(txt);
+            console.log(li)
+            ul.appendChild(li); // ul요소(부모요소) 메소드:appendChild(li) 하위 요소가 들어가있음
+        });
+
+        // console.log(ul);
+        show.appendChild(ul); // 화면에 나타나게 해줌 부모요소.appendChild(자식요소)
+
+        function makeUL() {
+            // 요소생성. createElement()
+            let ul = document.createElement('ul');
+            students.forEach(elem => {
+                let li = document.createElement('li');
+                li.setAttribute('id', elem.sno); // attributeNode를 추가하는 메소드:setAttribute()
+                let txt = document.createTextNode(`${elem.sno}, ${elem.sname}`); // 만드는게 텍스트노드일경우createTextNode
+                li.appendChild(txt);
+                console.log(li)
+                ul.appendChild(li); // ul요소(부모요소) 메소드:appendChild(li) 하위 요소가 들어가있음
+            });
+            return ul;
+        }
+
+        show.appendChild(makeTable());
+
+        function makeTable() {
+            let tbl = document.createElement('table');
+            let tblBody = document.createElement('tbody');
+            students.forEach(obj => { // 오브젝트 반복
+                let tr = document.createElement('tr');
+                for (let key in obj) { // 요소 반복
+                    console.log(obj[key])
+                    let td = document.createElement('td');
+                    // td.setAttribute('id', elem.sno); 
+                    let txet = document.createTextNode(obj[key]);
+                    td.appendChild(txet);
+                    tr.appendChild(td);
+                }
+                tbl.appendChild(tr);
+            });
+            tbl.appendChild(tblBody);
+            tbl.setAttribute("border", "1");
+            return tbl;
+        };
+        
+    </script>
+</body>
+
+</html>
