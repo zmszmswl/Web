@@ -1,61 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main.html</title>
     <style>
-        table{
+        table {
             border-collapse: collapse;
             width: 200px;
             text-align: center;
             margin: 10px;
         }
-        tr{
+
+        tr {
             height: 20px;
         }
+
         tr td:nth-child(1) {
             color: red;
         }
+
         tr td:nth-child(7) {
             color: blue
         }
     </style>
     <script>
-    
+
     </script>
     <!-- <script src="js/variable.js"></script> -->
     <!-- <script src="js/variable2.js"></script> -->
     <!-- <script src="js/variable3.js"></script> -->
     <!-- <script src="js/functuon.js"></script>
      <script src="js/functuon1.js"></script> -->
-        <!-- <script src="js/functuon2.js"></script> -->
-        <!-- <script src="js/function3.js"></script> -->
-        <!-- <script src="js/object.js"></script> -->
-        <!-- <script src="js/table.js"></script> -->
-        <!-- <script src="js/function_table.js"></script> -->
-        <!-- <script src="js/object_constructor.js"></script> -->
-         <!-- <script src="js/string_basic.js"></script> -->
+    <!-- <script src="js/functuon2.js"></script> -->
+    <!-- <script src="js/function3.js"></script> -->
+    <!-- <script src="js/object.js"></script> -->
+    <!-- <script src="js/table.js"></script> -->
+    <!-- <script src="js/function_table.js"></script> -->
+    <!-- <script src="js/object_constructor.js"></script> -->
+    <!-- <script src="js/string_basic.js"></script> -->
 </head>
+
 <body>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+
+    </ul>
+    <div>
+        <h1>Cities</h1>
+        <ul>
+            <li id="one" class="red">Seoul</li>
+            <li id="two" class="red">London</li>
+            <li id="three" class="red">Newyork</li>
+            <li id="four" class="">Tokyo</li>
+
+        </ul>
+    </div>
+
+    <button id="add1">클릭</button> <!-- id 속성은 페이지에서 1번만 쓰이게함 -->
+    <button>클릭</button>
+    <script>
+        // console.log(window)
+        let list = document.getElementsByTagName('li'); // HTML 컬렉션타입 <>태그가 여러건넘어옴
+        let detail = list[3];
+        // element, attribute, text => node. DOM(문서객체모델) API(method(), 속성)
+        let attNode = detail.getAttribute('id');
+        let txtNode = detail.childNodes[0];
+
+        let add1 = document.getElementById('add1') // 클릭 이벤트 생성 id값으로 불러오는게 제일 좋음
+        add1.addEventListener('click', function () {
+            // element node 생성.
+            let li = document.createElement('li'); // element node 생성.
+            //  innerHTML 속성
+            li.innerHTML = '대구';
+            let ul = document.querySelector('div > ul');
+            ul.appendChild(li); //<ul><li>대구</li></ul>
+            console.log(li)
+        })
+        console.log(add1);
+
+        // 클릭 이벤트 생성
+        let btns = document.querySelectorAll('button') // NodeList (세분화) 노드를 기준으로 리턴 되는 타입이 컬렉션타입
+        btns[1].addEventListener('mouseover', function () { // mouseover. mouseout click
+            document.querySelector('div > ul > li').remove();
+        })
+        console.log(btns[1]);
+
+        // lis[0].remove();
+        // let btn = document.getElementById('add');
+    </script>
+
     <!-- <a href="#">이동사이트</a> -->
     <!-- <input type="file" id="selectFile" accept="text/plain"> -->
     <!-- <script src="js/exception.js"></script> -->
     <!-- <script src="js/function_table.js"></script> -->
-     <!-- <script src="js/string_literal.js"></script> -->
-     <!-- <script src="js/calendar_date.js"></script> -->
-     <!-- <script src="array_basic.js"></script> -->
-     <!-- <script src="array_basic1.js"></script> -->
-     <!-- <script src="array_basic2.js"></script> -->
-     <script src="array_basic3.js"></script>
+    <!-- <script src="js/string_literal.js"></script> -->
+    <!-- <script src="js/calendar_date.js"></script> -->
+    <!-- <script src="js/array_basic.js"></script> -->
+    <!-- <script src="js/array_basic1.js"></script> -->
+    <!-- <script src="js/array_basic2.js"></script> -->
+    <!-- <script src="js/array_basic3.js"></script> -->
+    <!-- <script src="js/for_loop.js"></script> -->
+    <!-- <script src="js/for_loop2.js"></script> -->
+    <!-- <script src="js/array_method.js"></script> -->
 
 
 
 
-    
+
     <!-- <button id="add">클릭</button> -->
-   
+
 
     <script>
         // let btn = document.getElementById('add');
@@ -66,4 +124,5 @@
         // })
     </script>
 </body>
+
 </html>
