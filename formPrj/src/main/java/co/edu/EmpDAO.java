@@ -1,7 +1,6 @@
 package co.edu;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,5 +45,33 @@ public class EmpDAO extends DAO {
 			disconnect();
 		}
 		return list;
+	}	// end of getName()
+
+	public List<Employee> empList(){
+		getConnect();
+		String sql = "select * from employees";
+		List<Employee> list = new ArrayList<>(); // 인터페이스
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				Employee emp = new Employee();
+				emp.setEmail(rs.getString("email"));
+				emp.setEmpId(rs.getInt("employee_id"));
+				emp.setHireDate(rs.getString("hire_date"));
+				emp.setJobId(rs.getString("job_id"));
+				emp.setLastName(rs.getString("last_name"));
+				
+				list.add(emp);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			disconnect();
+		}
+		return list;
+	} // end of List<Employee>
 }
-}
+
+
+

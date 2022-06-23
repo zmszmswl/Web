@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="show">
+		<table border=1>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody id="empList"></tbody>
+			
+		</table>
+	</div>
+	
+
+	<script>
+
+		let fields = {
+			empId : 'ID',
+			lastName : 'Name',
+			email : 'Email'
+		};
+		
+		let xhtp = new XMLHttpRequest();
+		xhtp.open('get', 'EmpServlet');
+		xhtp.send();
+		xhtp.onload = showList;
+		
+		function showList () {
+			let data = JSON.parse(this.responseText);
+			// console.log(result.data[0]);
+		
+			// tbody
+			let tbody = document.getElementById('empList')
+			data.forEach(emp => {
+				let tr = document.createElement('tr'); // objet 선언된 개수만큼 필드 보여주기 위해서.
+				for (let field in fields){
+					let td = document.createElement('td');
+					td.innerHTML = emp[field];
+					tr.append(td);
+				}
+				tbody.append(tr);
+			});
+			//document.getElementId('show').append(tbody);
+		}
+	</script>
+</body>
+</html>

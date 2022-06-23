@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DAO {
+	// 필드
 	Connection conn;
 	PreparedStatement psmt;
 	ResultSet rs;
