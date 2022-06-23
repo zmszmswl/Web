@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asynch.html</title>
+    <script>
+        // 동기 Synchronous vs. 비동기(Ajax) Asynchronous Javascript And XML; / JSON.parse()
+        setTimeout(function () {
+            console.log('start');
+
+            setTimeout(function () { // setTimeout 함수를 1초 있다가 실행하시오.
+                console.log('mid');
+                // 1초
+                setTimeout(function () {
+                    console.log('end');
+                }, 1500);
+            }, 1000);
+        }, 2000);
+
+
+        // 비동기방식 처리 객체 XMLHttpRequest()
+        let xhtp = new XMLHttpRequest(); // Ajax : 파일정보 읽기.
+        xhtp.open('get', '../js/dataset.xml'); // 요청방식, 요청 URL  send()필요
+        xhtp.send();
+        xhtp.onload = loadCallBack;
+
+        // 여러개의 코드에서 그 객체를 뜻하는 this 로 반응할 수 있도록 만들자(참고)
+        // let ajax = new XMLHttpRequest();
+        // ajax.open('get', '....??');
+        // ajax.onload = loadCallBack;
+       
+         function loadCallBack() { // on~ 이벤트와 관련된 객체
+            // console.log(xhtp.responseText);  
+            // document.write(xhtp.responseText);
+            // let data = JSON.parse(xhtp.responseText); // json텍스트타입 -> 자바스크립트obj타입으로 변경
+            // console.log(data);
+            console.log(this.responseXML); // 객체 안에서의 this는 그 객체를 뜻 함.
+            let doc = this.responseXML;
+            let records = doc.getElementsByTagName('record'); // HTMLCollection은 리턴결과가 복수인 경우에 사용하게 되는 객체. 유사배열이고 배열은 아니다.
+            records = doc.querySelectorAll('record'); // NodeList
+            console.log(records[0].children[1].innerHTML);
+
+            let show = document.getElementById('show');
+            records.forEach(member => {
+                // console.log(member)
+                let str = '';
+                for(let i = 0; i <member.children.length; i++){  // member.children[0].innerHTML; // id// member.children[1].innerHTML; // first_name
+                    str += member.children[i].innerHTML + " ";
+                }
+                console.log(str);
+                let li = document.createElement('li');
+                let txt = document.createTextNode(str);
+                li.appendChild(txt);
+                show.append(li);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="show">
+        <!-- <li>id, fn, ln, em, sal</li> -->
+
+    </ul>
+</body>
+
+</html>

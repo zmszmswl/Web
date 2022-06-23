@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .multi{
+            -webkit-column-width: 120px;
+            -moz-column-width: 120px;
+            column-width: 120px;
+            column-count: 4;
+            column-gap: 20px;
+            column-rule: 2px dotted #000;
+            text-align: justify;
+        }
+        .multi > h3 {
+            break-before: column;
+        }
+        .no-col{
+            column-span: all;
+        }
+    </style>
+</head>
+<body>
+    <div class ="multi">
+        <h2>코코넛오일</h2>
+        Lorem #0 ipsum dolor sit amet consectetur, adipisicing 
+            elit. Enim excepturi rerum repudiandae odio at commodi magnam,
+             nobis, iusto quam minus dignissimos officia nemo
+              velit! Dicta vel quis corrupti ipsum esse.
+        <h3>아보카도</h3>
+        <p><b> Lorem #1 ipsum dolor sit amet consectetur, adipisicing 
+            elit. Enim excepturi rerum repudiandae odio at commodi magnam,
+             nobis, iusto quam minus dignissimos officia nemo
+              velit! Dicta vel quis corrupti ipsum esse.</b></p>
+              <h3>케일</h3>
+              <p><b> Lorem #2 ipsum dolor sit amet consectetur, adipisicing 
+                elit. Enim excepturi rerum repudiandae odio at commodi magnam,
+                 nobis, iusto quam minus dignissimos officia nemo
+                  velit! Dicta vel quis corrupti ipsum esse.</b></p>
+                 <div class="no-col"> 
+                  <h3>아몬드</h3>
+                  <p><b> Lorem #3 ipsum dolor sit amet consectetur, adipisicing 
+                    elit. Enim excepturi rerum repudiandae odio at commodi magnam,
+                     nobis, iusto quam minus dignissimos officia nemo
+                      velit! Dicta vel quis corrupti ipsum esse.</b></p></div>
+
+    </div>
+</body>
+</html>

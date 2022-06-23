@@ -1,0 +1,36 @@
+/* css/style3.css*/
+body {
+    font : 14px "맑은 고딕";
+}
+.container{
+    border: 1px solid green;
+    width: 960px;
+    margin: 0 auto;
+    
+}
+header{
+    position: relative; /*원래있던 위치로 요소들을 지정하겠다.*/
+    height: 280px;
+    font-size: 3em;
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+/*position 속성을 통해 문서 상에 요소를 배치하는 방법을 지정한다.*/
+/* top , right , bottom , left 속성을 통해 요소의 최종 위치를 결정한다*/
+/*사용법 : 1.기준을 잡는다 (position : relative;) 2. 이동시킨다 (top:50px) */
+header > h1{
+    position: absolute; /*컨텐츠 영역의 바깥을 기준(heaber) left right으로 지정*/
+    right: 20px;
+    bottom: 70px;
+    font-size: 1.9em;
+    color: #ffc;
+}
+header > h2{
+    position : absolute;
+    right: 20px;
+    bottom: 30px;
+    font-size: 1.5em;
+    color: #ff0;
+}
